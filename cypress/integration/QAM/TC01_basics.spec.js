@@ -3,7 +3,6 @@
 describe('Login', function(){
 
     before('load fixture', () => {
-
         cy.fixture('userDetails').as('user')
     });
     it('Sign in', function(){
