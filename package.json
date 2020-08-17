@@ -15,7 +15,9 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "dependencies": {},
+  "dependencies": {
+    "cypress-plugin-retries": "^1.5.2"
+  },
   "devDependencies": {
     "cypress": "^4.12.1",
     "cypress-cucumber-preprocessor": "^2.0.1",

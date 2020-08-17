@@ -7,7 +7,7 @@ describe('Create and mark-unmark as favorite', function () {
 
     
     it('Sign in', function () {
-        cy.visit('https://react-redux.realworld.io/#/login')
+        cy.visit('/#/login')
         cy.title().should('eq', 'Conduit')
         cy.location('protocol').should('eq', 'https:')
         cy.get('form').within(($form) => {
@@ -32,7 +32,7 @@ describe('Create and mark-unmark as favorite', function () {
     })
 
     it('Mark-unmark as favorite', function () {
-        cy.get('ul.navbar-nav').children().contains('QAMs').click()
+        cy.get('ul.navbar-nav').children().contains('TestingCypress').click()
         cy.contains('My Articles').should('be.visible')
         cy.get('.ion-heart').first().click()
         cy.contains('Favorited Articles').click()

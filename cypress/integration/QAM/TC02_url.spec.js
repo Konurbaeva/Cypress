@@ -6,7 +6,7 @@ describe('Create and mark-unmark as favorite', function(){
     });
 
     it('Sign in', function(){
-        cy.visit('https://react-redux.realworld.io/#/login')
+        cy.visit('/#/login')
         cy.title().should('eq','Conduit')
         cy.location('protocol').should('eq','https:')
         cy.get('input[type="email"]').type(`${this.user.email}`)
@@ -26,19 +26,27 @@ describe('Create and mark-unmark as favorite', function(){
         cy.url().should('include','article')
     })
 
+    // fix
     it('Mark-unmark as favorite', function(){
-        cy.get('.nav-link').contains('QAMs').click()
+      //  cy.get('.nav-link').contains('TestingCypress').first().click()
+       cy.get('.nav-link').contains('TestingCypress').click()
         cy.contains('My Articles').should('be.visible')
-        cy.get('.ion-heart').click()
+        cy.get('.ion-heart').first().click()
         cy.contains('Favorited Articles').click()
         cy.url().should('include','favorites')
-        cy.get('.ion-heart').click()
+        cy.get('.ion-heart').first().click()
+
+        cy.get('.ion-heart').each(listItem => { 
+          //  const itemText = listItem.text().trim() 
+      
+            cy.wrap(listItem).click()
+       })  
+
+        
         cy.reload()
         cy.contains('No articles are here... yet.').should('be.visible')
         cy.go('back')
-        //cy.go(-1)
-        //cy.go('forward')
-        //cy.go(1)
+  
 
     })
 })

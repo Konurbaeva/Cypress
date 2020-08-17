@@ -19,7 +19,7 @@ describe('Create and mark-unmark as favorite', function () {
     })
 
     it('Mark-unmark as favorite', function () {
-        cy.get('ul.navbar-nav').children().contains('QAMs').click()
+        cy.get('ul.navbar-nav').children().contains('TestingCypress').click()
         cy.contains('My Articles').should('be.visible')
         cy.get('.ion-heart').first().click()
         cy.contains('Favorited Articles').click()
