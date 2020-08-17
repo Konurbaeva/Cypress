@@ -20,7 +20,7 @@
   },
   "devDependencies": {
     "cypress": "^4.12.1",
-    "cypress-cucumber-preprocessor": "^2.0.1",
+    "cypress-cucumber-preprocessor": "^2.5.4",
     "cypress-file-upload": "^4.0.4",
     "cypress-multi-reporters": "^1.2.4",
     "mocha": "^7.1.2",

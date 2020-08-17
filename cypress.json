@@ -4,6 +4,7 @@
   "env": {
     "RETRIES": 2
   },
+  "testFiles": "**/*.feature",
   "watchForFileChanges": true,
   "reporterOptions": {
     "reporterEnabled": "mochawesome",
